@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function CreateListing() {
 // handle Title Input
@@ -21,9 +22,24 @@ function CreateListing() {
     if (uploaded){
     }
     }
+    //initialize navigate
+    const navigate = useNavigate();
 
   return (
-  <div style={{textAlign:'center'}}>
+  <div style={{textAlign:'center', position: 'relative'}}>
+    <button
+                onClick={() => navigate('/home')}
+                style={{
+                    position: 'absolute',
+                    top: '10px',
+                    left: '10px',
+                    padding: '8px 16px',
+                    cursor: 'pointer'
+                }}
+            >
+                ← Back to Homepage
+            </button>
+
     <h1>Create a Listing</h1>
 
     <h3>Title</h3>
